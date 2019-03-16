@@ -18,6 +18,12 @@ end
 
 def find_the_cheese array
   cheese_types = ["cheddar", "gouda", "camembert"]
-  match = array & cheese_types
-  match.join
+  if array.any? do |x|
+    x == "cheddar" || "gouda" || "camembert"
+  end
+      match = array & cheese_types
+      match.join
+  else
+    return nil
+  end
 end
